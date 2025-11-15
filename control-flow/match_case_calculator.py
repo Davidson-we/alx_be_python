@@ -1,9 +1,15 @@
 #Ask the user to enter two numbers
-num1 = float(input("Enter the first number: "))
-num2 = float(input("Enter the second number: "))
+num1 = int(input("Enter the first number:"))
+num2 = int(input("Enter the second number:"))
 
 #Ask the user to enter an operator
-operation = input("Choose the operator (+, -, *, /):")
+operation = input("Choose the operation (+, -, *, /):")
+
+#A helper function to clean numbers like 50.0 to 50
+def clean_number(n):
+    if n == int(n):
+        return int(n)
+    return n
 
 #Use match case to perform the operation
 match operation:
@@ -23,4 +29,4 @@ match operation:
             result = num1 / num2
             print(f"The result is {result}")
     case _:
-        print("Invalid operator.")
+        print("Invalid operation.")
